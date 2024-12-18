@@ -10,23 +10,99 @@ import { RouterModule } from '@angular/router';
   styleUrl: './minutes-calc.component.scss',
 })
 export class MinutesCalcComponent {
-  protected threeHours = 0;
-  protected hours = 0;
-  protected fiveMinutes = 0;
-  protected minutes = 0;
+  protected speedups: Speedups = {
+    research: {
+      threeHours: null,
+      hours: null,
+      fiveMinutes: null,
+      minutes: null,
+    },
+    training: {
+      threeHours: null,
+      hours: null,
+      fiveMinutes: null,
+      minutes: null,
+    },
+    construction: {
+      threeHours: null,
+      hours: null,
+      fiveMinutes: null,
+      minutes: null,
+    },
+    general: {
+      threeHours: null,
+      hours: null,
+      fiveMinutes: null,
+      minutes: null,
+    } as const,
+  };
 
   result = 0;
 
   convertMinutes() {
-    const threeHoursInMinutes = this.threeHours * 180;
-    const hoursInMinutes = this.hours * 60;
-    const fiveMinutesInMinutes = this.fiveMinutes * 5;
-    const totalMinutes =
-      threeHoursInMinutes +
-      hoursInMinutes +
-      fiveMinutesInMinutes +
-      this.minutes;
+    const totalSpeedupMinutes: Record<keyof Speedups, number> = {
+      research: 0,
+      training: 0,
+      construction: 0,
+      general: 0,
+    };
+    let totalMinutes = 0;
 
-    this.result = totalMinutes;
+    Object.entries(this.speedups).forEach(([speedupType, speedups]) => {
+      Object.entries(speedups).forEach(([speedupTime, value]) => {
+        const cleanValue = (value as number | null) ?? 0;
+
+        switch (speedupTime) {
+          case 'threeHours':
+            totalSpeedupMinutes[speedupType as keyof Speedups] +=
+              cleanValue * 180;
+            totalMinutes += cleanValue * 180;
+            return;
+
+          case 'hours':
+            totalSpeedupMinutes[speedupType as keyof Speedups] +=
+              cleanValue * 60;
+            totalMinutes += cleanValue * 60;
+            return;
+
+          case 'fiveMinutes':
+            totalSpeedupMinutes[speedupType as keyof Speedups] +=
+              cleanValue * 5;
+            totalMinutes += cleanValue * 5;
+            return;
+
+          case 'minutes':
+            totalSpeedupMinutes[speedupType as keyof Speedups] += cleanValue;
+            totalMinutes += cleanValue;
+            return;
+
+          default:
+            return;
+        }
+      });
+    });
+
+    // this.result = totalMinutes;
+    alert(`
+      Research speedups: ${totalSpeedupMinutes.research} minutes\n
+      Training speedups: ${totalSpeedupMinutes.training} minutes\n
+      Construction speedups: ${totalSpeedupMinutes.construction} minutes\n
+      General speedups: ${totalSpeedupMinutes.general} minutes\n
+      Total speeup minutes: ${totalMinutes} minutes\n
+      `);
   }
+}
+
+interface Speedups {
+  research: SpeedupTypes;
+  training: SpeedupTypes;
+  construction: SpeedupTypes;
+  general: SpeedupTypes;
+}
+
+interface SpeedupTypes {
+  threeHours: number | null;
+  hours: number | null;
+  fiveMinutes: number | null;
+  minutes: number | null;
 }

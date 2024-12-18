@@ -1,45 +1,186 @@
 <div class="flex-container">
   <div class="flex-items">
-    <h2>Minutes Calculator</h2>
+    <h1>Whiteout Survival Speedup Minutes Calculator</h1>
 
-    <div class="input-container">
-      <label for="threeHours">3 hours</label>
-      <input
-        id="threeHours"
-        type="number"
-        [(ngModel)]="threeHours"
-        placeholder="Enter 3 hour speedups"
-      />
-    </div>
+    <div class="columns-container">
+      <div class="training-speedups">
+        <h3>Training Speedups</h3>
 
-    <div class="input-container">
-      <label for="hours">hours</label>
-      <input
-        id="hours"
-        type="number"
-        [(ngModel)]="hours"
-        placeholder="Enter hours"
-      />
-    </div>
+        <div class="input-container three-hours-speedup">
+          <label for="threeHours">3 hours</label>
+          <input
+            id="threeHours"
+            type="number"
+            [(ngModel)]="speedups.training.threeHours"
+            placeholder="Enter 3 hour speedups"
+          />
+        </div>
 
-    <div class="input-container">
-      <label for="fiveMinutes">5 minutes</label>
-      <input
-        id="fiveMinutes"
-        type="number"
-        [(ngModel)]="fiveMinutes"
-        placeholder="Enter hours"
-      />
-    </div>
+        <div class="input-container one-hour-speedup">
+          <label for="hours">hours</label>
+          <input
+            id="hours"
+            type="number"
+            [(ngModel)]="speedups.training.hours"
+            placeholder="Enter hours"
+          />
+        </div>
 
-    <div class="input-container">
-      <label for="minutes">minutes</label>
-      <input
-        id="minutes"
-        type="number"
-        [(ngModel)]="minutes"
-        placeholder="Enter hours"
-      />
+        <div class="input-container five-minutes-speedup">
+          <label for="fiveMinutes">5 minutes</label>
+          <input
+            id="fiveMinutes"
+            type="number"
+            [(ngModel)]="speedups.training.fiveMinutes"
+            placeholder="Enter hours"
+            w
+          />
+        </div>
+
+        <div class="input-container one-minute-speedup">
+          <label for="minutes">minutes</label>
+          <input
+            id="minutes"
+            type="number"
+            [(ngModel)]="speedups.training.minutes"
+            placeholder="Enter hours"
+          />
+        </div>
+      </div>
+
+      <div class="construction-speedups">
+        <h3>Construction Speedups</h3>
+
+        <div class="input-container three-hours-speedup">
+          <label for="threeHours">3 hours</label>
+          <input
+            id="threeHours"
+            type="number"
+            [(ngModel)]="speedups.construction.threeHours"
+            placeholder="Enter 3 hour speedups"
+          />
+        </div>
+
+        <div class="input-container one-hour-speedup">
+          <label for="hours">hours</label>
+          <input
+            id="hours"
+            type="number"
+            [(ngModel)]="speedups.construction.hours"
+            placeholder="Enter hours"
+          />
+        </div>
+
+        <div class="input-container five-minutes-speedup">
+          <label for="fiveMinutes">5 minutes</label>
+          <input
+            id="fiveMinutes"
+            type="number"
+            [(ngModel)]="speedups.construction.fiveMinutes"
+            placeholder="Enter hours"
+            w
+          />
+        </div>
+
+        <div class="input-container one-minute-speedup">
+          <label for="minutes">minutes</label>
+          <input
+            id="minutes"
+            type="number"
+            [(ngModel)]="speedups.construction.minutes"
+            placeholder="Enter hours"
+          />
+        </div>
+      </div>
+
+      <div class="research-speedups">
+        <h3>Research Speedups</h3>
+        <div class="input-container three-hours-speedup">
+          <label for="threeHours">3 hours</label>
+          <input
+            id="threeHours"
+            type="number"
+            [(ngModel)]="speedups.research.threeHours"
+            placeholder="Enter 3 hour speedups"
+          />
+        </div>
+
+        <div class="input-container one-hour-speedup">
+          <label for="hours">hours</label>
+          <input
+            id="hours"
+            type="number"
+            [(ngModel)]="speedups.research.hours"
+            placeholder="Enter hours"
+          />
+        </div>
+
+        <div class="input-container five-minutes-speedup">
+          <label for="fiveMinutes">5 minutes</label>
+          <input
+            id="fiveMinutes"
+            type="number"
+            [(ngModel)]="speedups.research.fiveMinutes"
+            placeholder="Enter hours"
+            w
+          />
+        </div>
+
+        <div class="input-container one-minute-speedup">
+          <label for="minutes">minutes</label>
+          <input
+            id="minutes"
+            type="number"
+            [(ngModel)]="speedups.research.minutes"
+            placeholder="Enter hours"
+          />
+        </div>
+      </div>
+
+      <div class="general-speedups">
+        <h3>General Speedups</h3>
+
+        <div class="input-container three-hours-speedup">
+          <label for="threeHours">3 hours</label>
+          <input
+            id="threeHours"
+            type="number"
+            [(ngModel)]="speedups.general.threeHours"
+            placeholder="Enter 3 hour speedups"
+          />
+        </div>
+
+        <div class="input-container one-hour-speedup">
+          <label for="hours">hours</label>
+          <input
+            id="hours"
+            type="number"
+            [(ngModel)]="speedups.general.hours"
+            placeholder="Enter hours"
+          />
+        </div>
+
+        <div class="input-container five-minutes-speedup">
+          <label for="fiveMinutes">5 minutes</label>
+          <input
+            id="fiveMinutes"
+            type="number"
+            [(ngModel)]="speedups.general.fiveMinutes"
+            placeholder="Enter hours"
+            w
+          />
+        </div>
+
+        <div class="input-container one-minute-speedup">
+          <label for="minutes">minutes</label>
+          <input
+            id="minutes"
+            type="number"
+            [(ngModel)]="speedups.general.minutes"
+            placeholder="Enter hours"
+          />
+        </div>
+      </div>
     </div>
 
     <button (click)="convertMinutes()">Convert to minutes</button>
