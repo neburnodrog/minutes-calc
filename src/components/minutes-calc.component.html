@@ -1,9 +1,9 @@
 <div class="flex-container">
   <div class="flex-items">
-    <h1>Whiteout Survival Speedup Minutes Calculator</h1>
+    <h2>Whiteout Survival Speedup Minutes Calculator</h2>
 
     <div class="columns-container">
-      <div class="training-speedups">
+      <div class="speedup-times">
         <h3>Training Speedups</h3>
 
         <div class="input-container three-hours-speedup">
@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <div class="construction-speedups">
+      <div class="speedup-times">
         <h3>Construction Speedups</h3>
 
         <div class="input-container three-hours-speedup">
@@ -93,7 +93,7 @@
         </div>
       </div>
 
-      <div class="research-speedups">
+      <div class="speedup-times">
         <h3>Research Speedups</h3>
         <div class="input-container three-hours-speedup">
           <label for="threeHours">3 hours</label>
@@ -137,7 +137,7 @@
         </div>
       </div>
 
-      <div class="general-speedups">
+      <div class="speedup-times">
         <h3>General Speedups</h3>
 
         <div class="input-container three-hours-speedup">
@@ -177,6 +177,50 @@
             id="minutes"
             type="number"
             [(ngModel)]="speedups.general.minutes"
+            placeholder="Enter hours"
+          />
+        </div>
+      </div>
+
+      <div class="speedup-times">
+        <h3>Healing Speedups</h3>
+
+        <div class="input-container three-hours-speedup">
+          <label for="threeHours">3 hours</label>
+          <input
+            id="threeHours"
+            type="number"
+            [(ngModel)]="speedups.healing.threeHours"
+            placeholder="Enter 3 hour speedups"
+          />
+        </div>
+
+        <div class="input-container one-hour-speedup">
+          <label for="hours">hours</label>
+          <input
+            id="hours"
+            type="number"
+            [(ngModel)]="speedups.healing.hours"
+            placeholder="Enter hours"
+          />
+        </div>
+
+        <div class="input-container five-minutes-speedup">
+          <label for="fiveMinutes">5 minutes</label>
+          <input
+            id="fiveMinutes"
+            type="number"
+            [(ngModel)]="speedups.healing.fiveMinutes"
+            placeholder="Enter hours"
+          />
+        </div>
+
+        <div class="input-container one-minute-speedup">
+          <label for="minutes">minutes</label>
+          <input
+            id="minutes"
+            type="number"
+            [(ngModel)]="speedups.healing.minutes"
             placeholder="Enter hours"
           />
         </div>

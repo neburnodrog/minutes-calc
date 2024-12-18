@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0px;
 
   .flex-items {
     display: flex;
@@ -12,21 +13,23 @@
 
     .columns-container {
       display: flex;
+      margin: 0;
 
-      div {
-        margin: 1rem;
+      .speedup-times {
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-radius: 1rem;
-        border: 1px solid #000000;
+        margin: 1rem;
+        padding: 0 1rem 1rem 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid #000;
 
         .input-container {
           display: flex;
           flex-direction: column;
           align-items: normal;
+          margin: 0.5rem;
           padding: 1rem;
-          border-radius: 0.5rem;
 
           h5 {
             margin: 0rem;
@@ -64,16 +67,24 @@
 
 .one-minute-speedup {
   background: linear-gradient(45deg, #d4d8d9 0%, #4d5359 100%);
+  border: 5px solid #98a1a1;
+  border-radius: 0.5rem;
 }
 
 .five-minutes-speedup {
   background: linear-gradient(45deg, #99e97a 0%, #115f0b 100%);
+  border: 5px solid #00a312;
+  border-radius: 0.5rem;
 }
 
 .one-hour-speedup {
-  background: linear-gradient(45deg, #27568c 0%, #9cd9f2 100%);
+  background: linear-gradient(45deg, #9cd9f2 0%, #27568c 100%);
+  border: 5px solid #2456ca;
+  border-radius: 0.5rem;
 }
 
 .three-hours-speedup {
   background: linear-gradient(45deg, #ddb9f6 0%, #7a2bba 100%);
+  border: 5px solid #af5eff;
+  border-radius: 0.5rem;
 }

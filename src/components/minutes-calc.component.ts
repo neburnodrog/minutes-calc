@@ -34,7 +34,13 @@ export class MinutesCalcComponent {
       hours: null,
       fiveMinutes: null,
       minutes: null,
-    } as const,
+    },
+    healing: {
+      threeHours: null,
+      hours: null,
+      fiveMinutes: null,
+      minutes: null,
+    },
   };
 
   result = 0;
@@ -45,6 +51,7 @@ export class MinutesCalcComponent {
       training: 0,
       construction: 0,
       general: 0,
+      healing: 0,
     };
     let totalMinutes = 0;
 
@@ -84,11 +91,14 @@ export class MinutesCalcComponent {
 
     // this.result = totalMinutes;
     alert(`
+      Total speeup minutes: ${totalMinutes} minutes\n\n
+      Details:\n
+
       Research speedups: ${totalSpeedupMinutes.research} minutes\n
       Training speedups: ${totalSpeedupMinutes.training} minutes\n
       Construction speedups: ${totalSpeedupMinutes.construction} minutes\n
+      Healing speedups: ${totalSpeedupMinutes.healing} minutes\n
       General speedups: ${totalSpeedupMinutes.general} minutes\n
-      Total speeup minutes: ${totalMinutes} minutes\n
       `);
   }
 }
@@ -98,6 +108,7 @@ interface Speedups {
   training: SpeedupTypes;
   construction: SpeedupTypes;
   general: SpeedupTypes;
+  healing: SpeedupTypes;
 }
 
 interface SpeedupTypes {
